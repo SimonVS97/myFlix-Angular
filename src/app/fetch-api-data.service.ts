@@ -20,7 +20,6 @@ export class FetchApiDataService {
   // returns the api call for the user registration endpoint
   // observable is promise
   public userRegistration(userDetails: any): Observable<any> {
-    console.log(userDetails);
     return this.http.post(apiUrl + 'users', userDetails).pipe(
       catchError(this.handleError)
     );
@@ -28,7 +27,6 @@ export class FetchApiDataService {
 
   // returns the api call for the login endpoint
   public userLogin(userName: any, userPassword: any): Observable<any> {
-    console.log(userName);
     return this.http.post(apiUrl + 'login', { Username: userName, Password: userPassword }).pipe(
       catchError(this.handleError)
     );
