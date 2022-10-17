@@ -1,0 +1,43 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      Profile overview
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    Username: {{user.Username}}
+  </mat-card-content>
+  <mat-card-content>
+    Email: {{user.Email}}
+  </mat-card-content>
+  <mat-card-content>
+    Birthday : {{user.Birthday | date}}
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      Update your profile information
+    </mat-card-title>
+  </mat-card-header>
+  <form>
+    <mat-form-field>
+      <input matInput [(ngModel)]="NewUserData.Username" placeholder="Username" type="text" name="Username">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [(ngModel)]="NewUserData.Birthday" placeholder="Birthday" type="text" name="Birthday">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [(ngModel)]="NewUserData.Email" placeholder="Email" type="text" name="Email">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [(ngModel)]="NewUserData.Password" placeholder="Password" type="text" name="Password">
+    </mat-form-field>
+    <mat-card-actions>
+      <button mat-raised-button color="primary">
+        Update
+      </button>
+    </mat-card-actions>
+  </form>
+</mat-card>

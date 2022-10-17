@@ -3,8 +3,6 @@ import { FetchApiDataService } from '../fetch-api-data.service'
 import { MatDialog } from '@angular/material/dialog';
 
 
-
-
 @Component({
   selector: 'app-movie-card',
   templateUrl: './movie-card.component.html',
