@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service'
 import { MatInputModule } from '@angular/material/input';
+import { NavBarComponent } from '../nav-bar/nav-bar.component';
 
 
 
@@ -50,7 +51,11 @@ export class ProfilePageComponent implements OnInit {
   }
 
   updateUser(): void {
-
+    let name = this.user.Username;
+    let body = this.NewUserData;
+    this.fetchApiData.putUser(name, body).subscribe((resp: any) => {
+      console.log(resp);
+    })
   }
 
 }

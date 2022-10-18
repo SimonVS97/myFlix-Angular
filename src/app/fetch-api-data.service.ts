@@ -125,7 +125,7 @@ export class FetchApiDataService {
     return this.http.put(apiUrl + 'users/' + userName, updateData, {
       headers: new HttpHeaders(
         {
-          Authorization: 'Bearer' + token,
+          Authorization: 'Bearer ' + token,
         })
     })
   }
