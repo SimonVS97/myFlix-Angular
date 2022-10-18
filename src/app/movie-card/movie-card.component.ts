@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service'
 import { MatDialog } from '@angular/material/dialog';
+import { MovieGenreComponent } from '../movie-genre/movie-genre.component';
 
 
 @Component({
@@ -26,6 +27,16 @@ export class MovieCardComponent implements OnInit {
       this.movies = resp;
       console.log(this.movies);
       return this.movies;
+    });
+  }
+
+  openGenreInfo(name: string, description: string): void {
+    this.dialog.open(MovieGenreComponent, {
+      data: {
+        Name: name,
+        Description: description
+      },
+      width: '280px'
     });
   }
 }
