@@ -16,7 +16,8 @@
       <button (click)="openSynopsisInfo(movie.Description)" mat-button color="primary">
         Synopsis
       </button>
-      <mat-icon>favorite_border</mat-icon>
+      <mat-icon *ngIf="!isFav(movie._id)" (click)="addFav(movie._id)">favorite_border</mat-icon>
+      <mat-icon *ngIf="isFav(movie._id)" (click)="removeFav(movie._id)">favorite</mat-icon>
     </mat-card-actions>
   </mat-card>
 

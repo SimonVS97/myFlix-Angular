@@ -13,6 +13,8 @@ import { SynopsisComponent } from '../synopsis/synopsis.component';
 })
 export class MovieCardComponent implements OnInit {
   movies: any[] = [];
+  show: boolean = true;
+  favMovies: any[] = [];
 
   constructor(
     public fetchApiData: FetchApiDataService,
@@ -21,6 +23,33 @@ export class MovieCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMovies();
+    this.getFavMovies();
+  }
+
+  getFavMovies(): void {
+    this.fetchApiData.getUser().subscribe((resp: any) => {
+      this.favMovies = resp.FavoriteMovies;
+      console.log(this.favMovies);
+    })
+  }
+
+  isFav(id: string): boolean {
+    return this.favMovies.includes(id);
+  }
+
+  addFav(id: string): void {
+    this.favMovies.push(id);
+    this.fetchApiData.postMovie(id).subscribe((resp: any) => {
+      console.log(resp);
+    })
+  }
+
+  removeFav(id: string): void {
+    let elemToRemove = this.favMovies.indexOf(id);
+    this.favMovies.splice(elemToRemove, 1);
+    this.fetchApiData.deleteMovie(id).subscribe((resp: any) => {
+      console.log(resp);
+    })
   }
 
   getMovies(): void {
