@@ -1,0 +1,24 @@
+div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+mat-card {
+  margin: 3%;
+  width: 10vw;
+}
+
+mat-card-header {
+  text-align: center;
+}
+
+mat-card-actions {
+  text-align: center;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
