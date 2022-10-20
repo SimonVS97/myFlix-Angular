@@ -12,18 +12,31 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
 export class AppComponent {
   title = 'myFlix-Angular-client';
 
+  /**
+   * 
+   * @param dialog, pass MatDialog service as dialog into constructor
+   * creates methods to open dialogs with certain components
+   */
   constructor(public dialog: MatDialog) { }
-  // method that will open the dialog when the signup button is clicked
+  /**
+   * method to open a registration dialog
+   */
   openUserRegistrationDialog(): void {
     this.dialog.open(UserRegistrationFormComponent, {
       width: '480px'
     });
   }
+  /**
+   * method to open login dialog
+   */
   openLoginDialog(): void {
     this.dialog.open(UserLoginFormComponent, {
       width: '480px'
     });
   }
+  /**
+   * method to open movie dialog
+   */
   openMoviesDialog(): void {
     this.dialog.open(MovieCardComponent, {
       width: '500px'

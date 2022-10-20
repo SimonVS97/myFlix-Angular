@@ -28,7 +28,10 @@ export class ProfilePageComponent implements OnInit {
       Email: "",
       Birthday: ""
     };
-
+  /**
+   * 
+   * @param fetchApiData import methods to execute api calls
+   */
   constructor(
     public fetchApiData: FetchApiDataService,
   ) { }
@@ -37,6 +40,10 @@ export class ProfilePageComponent implements OnInit {
     this.getUser();
   }
 
+  /**
+   * function to execute api call to get data on the user
+   * save that data into local variables
+   */
   getUser(): any {
     this.fetchApiData.getUser().subscribe((resp: any) => {
       console.log(resp);
@@ -50,11 +57,13 @@ export class ProfilePageComponent implements OnInit {
     })
   }
 
+  /**
+   * function to execute api call to update data on the user
+   */
   updateUser(): void {
     let name = this.user.Username;
     let body = this.NewUserData;
     this.fetchApiData.putUser(name, body).subscribe((resp: any) => {
-      console.log(resp);
     })
   }
 

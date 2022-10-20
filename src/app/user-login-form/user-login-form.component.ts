@@ -30,7 +30,9 @@ export class UserLoginFormComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  /**
+   * function to log a user in
+   */
   loginUser(): void {
     this.fethApiData.userLogin(this.userData.Username, this.userData.Password).subscribe((result) => {
       localStorage.setItem('token', result.token);

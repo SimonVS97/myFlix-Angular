@@ -9,7 +9,10 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./movie-genre.component.scss']
 })
 export class MovieGenreComponent implements OnInit {
-
+  /**
+   * 
+   * @param data inject dialog with data for the name and description of a movie genre
+   */
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: {
       Name: string,

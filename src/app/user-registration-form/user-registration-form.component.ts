@@ -22,7 +22,12 @@ export class UserRegistrationFormComponent implements OnInit {
   @Input() userData = { Username: '', Password: '', Email: '', Birthday: '' };
   // userData object will be passed into api call
 
-  // intialize within the constructor the imports
+  /**
+   * 
+   * @param fetchApiData pass the api Data service so the methods can be called
+   * @param dialogRef pass the UserRegistrationFormcomponent inside a dialog so it can used
+   * @param snackBar pass the snackbar component so it can displyed
+   */
   constructor(
     public fetchApiData: FetchApiDataService,
     public dialogRef: MatDialogRef<UserRegistrationFormComponent>,
@@ -33,18 +38,20 @@ export class UserRegistrationFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // This is the fuction responsible for sending the form inputs to the backend
+  /**
+   * function that registers the user
+   */
   registerUser(): void {
-    // subscribe actually executes the api call
+    /**
+     * function that takes user data and executes call to server
+     */
     this.fetchApiData.userRegistration(this.userData).subscribe((result) => {
       // Logic for a successful user registration goes here! (To be implemented)
       this.dialogRef.close(); // This will close the modal success!
-      console.log(result);
       this.snackBar.open(result, 'OK', {
         duration: 2000
       })
     }, (result) => {
-      console.log(result);
       this.snackBar.open(result, 'OK', {
         duration: 2000
       })

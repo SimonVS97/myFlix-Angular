@@ -10,6 +10,9 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class MovieDirectorComponent implements OnInit {
 
   constructor(
+    /**
+     * inject dialog with data on the name of the director and his/her bio
+     */
     @Inject(MAT_DIALOG_DATA) public data: {
       Name: string,
       Bio: string

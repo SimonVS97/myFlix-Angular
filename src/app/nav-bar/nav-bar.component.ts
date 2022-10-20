@@ -15,10 +15,15 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  /**
+   * method to navigate to profile view
+   */
   toProfile() {
     this.router.navigate(['profile']);
   }
+  /**
+   * method to navigate to movies view
+   */
   toMovies() {
     this.router.navigate(['movies']);
   }
