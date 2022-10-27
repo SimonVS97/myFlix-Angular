@@ -2,6 +2,7 @@
 
 ## Description
 
+This is an app that displays information about movies, directors and genres. User can create an account and create list of favorites movies. Users can also update their profile information and deregister from the app. 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.5.
 
 ## Screenshot
